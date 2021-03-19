@@ -19,6 +19,7 @@ from model import connect_to_db, db, User
 import helper_functions
 
 import api_calls
+import os
 
 app = Flask(__name__)
 
@@ -276,6 +277,6 @@ if __name__ == "__main__":
 
     app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False
 
-    
+    port = int(os.environ.get('PORT', 8000))
 
-    app.run(host="localhost", port=8000, debug=True)
+    app.run(host="localhost", port=port, debug=True)
