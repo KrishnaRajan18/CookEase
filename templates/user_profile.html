@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block title %} User Profile {% endblock %} {% block
+content %}
+
+<div class="container">
+  <div class="page-header">
+    <button class="btn btn-info" onclick="goBack()">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </button>
+    <h4 class="text-left text-primary">User Details</h2>
+        <p class="text-left text-primary">
+                Username: {{ username }} <br />
+            
+                Email: {{ email }} <br />
+              </p>
+  </div>
+
+  
+  
+<p>
+        <h3 class="text-center text-info">Bookmarked Recipes</h2>
+   
+    {% for recipe in bookmarked_recipes %}
+    <a href="/recipe-info/{{recipe.recipe_id}}"> {{ recipe.recipe_name }} </a>|
+    {% endfor %} <br />
+  </p>
+</div>
+
+<div class="container">
+
+  <div
+    id="carousel-example-generic"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+    
+    </div>
+
+    <!-- Controls -->
+    <a
+      class="left carousel-control"
+      href="#carousel-example-generic"
+      role="button"
+      data-slide="prev"
+      style="background: none"
+    >
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="right carousel-control"
+      href="#carousel-example-generic"
+      role="button"
+      data-slide="next"
+      style="background: none"
+    >
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  function goBack() {
+    window.history.go(-1);
+  }
+</script>
+
+<script src="/static/js/bookmark-display.js" type="text/javascript"></script>
+
+{% endblock %}

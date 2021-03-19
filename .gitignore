@@ -1,0 +1,9 @@
+*.DS_Store
+phantom*
+.coverage
+ghostdriver*
+geckodriver*
+env/
+*.pyc
+secrets.sh
+.env
