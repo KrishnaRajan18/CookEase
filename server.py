@@ -2,7 +2,7 @@
 
 
 from functools import wraps
-from flask_migrate import Migrate
+# from flask_migrate import Migrate
 
 from jinja2 import StrictUndefined
 
