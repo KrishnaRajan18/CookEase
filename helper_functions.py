@@ -34,11 +34,7 @@ def check_if_recipe_exists(recipe_id):
     return Recipe.query.filter(Recipe.recipe_id == recipe_id).first()
 
 
-def check_if_ingredient_exists(ingredient_id):
-    """Check if ingredient exists in DB. If so, returns instantiated Ingredient
-    object. Returns none if ingredient not found."""
 
-    return Ingredient.query.filter(Ingredient.ing_id == ingredient_id).first()
 
 
 
@@ -76,9 +72,9 @@ def add_recipe(recipe_id):
     db.session.add(new_recipe)
     db.session.commit()
 
-    # Isolate ingredients and cuisine info from dict to be added to DB.
+    
     ingredients_info = info_response['extendedIngredients']
-    # add_ingredients(recipe_id, ingredients_info)
+    
 
     
 
