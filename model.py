@@ -74,15 +74,47 @@ class Bookmark(db.Model):
 
 
 
+def example_data():
+    # Add sample users
+    user1 = User(username='krish', email='krish@gmail.com', password='qwert')
+    user2 = User(username='rajan', email='rajan@gmail.com', password='qwert1')
+    user3 = User(username='gauth', email='gauth@gmail.com', password='qwert2')
+
+    db.session.add_all([user1, user2, user3])
+    db.session.commit()
+
+    # Add sample recipes
+    recipe1 = Recipe(recipe_id='262682',
+                     recipe_name="Thai Sweet Potato Veggie Burgers with Spicy Peanut Sauce",
+                     img_url="https://spoonacular.com/recipeImages/262682-556x370.jpg",
+                     instructions="Preheat the oven to 350F")
+    recipe2 = Recipe(recipe_id='227961',
+                     recipe_name="Cajun Spiced Black Bean and Sweet Potato Burgers",
+                     img_url="Cajun-Spiced-Blao-Burgers-227961.jpg",
+                     instructions='bake it')
+    recipe3 = Recipe(recipe_id='602708',
+                     recipe_name="Meatless Burgers with Romesco and Arugula",
+                     img_url="Meatls-with-Romesco-and-Arugula-602708.jpg",
+                     instructions='mix it')
+
+    db.session.add_all([recipe1, recipe2, recipe3])
+    db.session.commit()
+
+
+    # Add sample bookmarks
+    bookmark1 = Bookmark(user_id=1, recipe_id='262682')
+    bookmark2 = Bookmark(user_id=2, recipe_id='227961')
+    bookmark3 = Bookmark(user_id=3, recipe_id='602708')
 
 
 
-def connect_to_db(app):
+
+def connect_to_db(app,db_uri=os.environ.get('DATABASE_URL','postgresql:///recipe')):
     """Connect the database to our Flask app."""
 
     # Configure to use our PostgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgresql:///recipe')
-    # app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+    # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','postgresql:///test')
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.app = app
     db.init_app(app)
