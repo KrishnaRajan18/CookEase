@@ -1,4 +1,6 @@
-CookEase helps the user to search for recipies based on the ingredient that gives the user the exact idea of what all ingredients and steps are required to make a recipe at home. It also provides a feature to bookmark a recipe for future.
+## CookEase
+
+CookEase helps the user to search for recipies based on the ingredient. This gives the user the exact idea of what all ingredients and steps are required to make a recipe at home. It also provides a feature to bookmark a recipe for future.
 
 ## Table of Contents
 
