@@ -1,5 +1,3 @@
-![Homepage]
-
 CookEase helps the user to search for recipies based on the ingredient that gives the user the exact idea of what all ingredients and steps are required to make a recipe at home. It also provides a feature to bookmark a recipe for future.
 
 ## Table of Contents
@@ -17,13 +15,10 @@ CookEase helps the user to search for recipies based on the ingredient that give
 
 ## Features
 
-![Homepage]
 Users can log in or register in the homepage, where the data is stored after password hashing to the PostgreSQL database. Registered users have access to the search page and once own bookmark page.
 
-![Homepage]
 Users can also search for recipes, triggering Spoonacular API calls to access recipe data upon clicking the search button. A loading button is installed to provide user feedback.
 
-![Homepage]
 Users can bookmark recipes via AJAX POST requests, which can be accessed in their bookmark page. The bookmark page includes user details as well as a Bootstrap carousel of the bookmarked recipes' images. Jinja2 was particularly used here to standardize the layout schema of all bookmark pages.
 
 ## Installation
